@@ -77,7 +77,11 @@ def validate_pivot_table_pclass_sex_fare(df):
     validate(pivot_table, df, hint)
 
 def validate_transpose(df):
-
     hint = "Look into the Pandas function `T`"
 
     validate(validation_df.T, df, hint)
+
+def validate_age_removed(df_without_age):
+    hint = "Look into the Pandas function `remove`. Note, this doesn't modify the dataframe by default and instead returns a new modified data frame. Also take note of the axis parameter (hint you want it to be set to 1, for columns)"
+
+    validate(validation_df.drop("Age", axis=1), df_without_age, hint)
