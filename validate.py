@@ -90,3 +90,13 @@ def validate_age_column_renamed_to_how_old(df_age_renamed_df):
     hint = "Look into the Pandas function called `rename`"
 
     validate(validation_df.rename(columns={'Age': 'How Old'}), df_age_renamed_df, hint)
+
+def validate_last_five_rows(last_five_rows_df):
+    hint = "Look into the Pandas function `tail`"
+
+    validate(validation_df.tail(), last_five_rows_df, hint)
+
+def validate_only_age_and_sex_columns(age_and_sex_columns_df):
+    hint = "Look into indexing into the dataframe by providing a list of rows of interest. Super duper hint: `df[['some column', 'some other column']]`"
+
+    validate(validation_df[['Age', 'Sex']], age_and_sex_columns_df, hint)
