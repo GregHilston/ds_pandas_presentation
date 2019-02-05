@@ -7,7 +7,7 @@ INPUT_FILE = "train.csv"
 
 validation_df = pd.read_csv(INPUT_FILE)
 
-def validate(expected, actual, message):
+def validate(expected, actual, message, success_message=None):
     print(f"expected type {type(expected)}") # TODO remove
     print(f"actual type {type(actual)}") # TODO remove
 
@@ -26,6 +26,9 @@ def validate(expected, actual, message):
             print(message)
     else:
         print("Correct!")
+
+        if success_message is not None:
+            print(f"\t{success_message}")
         
 def validate_first_row_of_df(df):
     validate(validation_df.head(1), df, "Hint: There are multiple ways to do this. Look into the data frame function `head`.")
