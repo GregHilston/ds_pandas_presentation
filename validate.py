@@ -100,3 +100,6 @@ def validate_only_age_and_sex_columns(age_and_sex_columns_df):
     hint = "Look into indexing into the dataframe by providing a list of rows of interest. Super duper hint: `df[['some column', 'some other column']]`"
 
     validate(validation_df[['Age', 'Sex']], age_and_sex_columns_df, hint)
+
+def validate_males_over_50_in_pclass_3(males_over_50_pclass_3):
+    hint = "Look into indexing the original data frame and combing conditionals with the `&` operator. This may be challenging the first time you do this. Here's an example of getting the teenages`df[(df['Age'] <= 18) & (df['Age'] >= 13)]`. Modify this to your need!"
