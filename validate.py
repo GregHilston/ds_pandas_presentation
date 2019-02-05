@@ -8,7 +8,10 @@ INPUT_FILE = "train.csv"
 validation_df = df = pd.read_csv(INPUT_FILE)
 
 def validate(expected, actual, message):
-    if ((isinstance(expected, pd.DataFrame) or isinstance(expected, pd.Series)) and not expected.equals(actual)) or (isinstance(expected, float) and expected != actual):
+    print(f"expected type {type(expected)}")
+    print(f"expectactualed type {type(actual)}")
+
+    if ((isinstance(expected, pd.DataFrame) or isinstance(expected, pd.Series)) and not expected.equals(actual)) or ((isinstance(expected, float) or isinstance(expected, int) or isinstance(expected, str)) and expected != actual):
         print("Incorrect!")
         print("Expected:")
         display(expected)
@@ -41,3 +44,8 @@ def validate_only_cabin_series(cabin_series):
     hint = "Hint: You should be able to access the series of the data frame either with dot notation like `df.COLUMN_NAME` or dictionary notation like `df['COLUMN_NAME']"
     
     validate(validation_df.Cabin, cabin_series, hint)
+
+def validate_value_of_sex_column_first_row(value):
+    hint = "Hint: Look up the Pandas function `at`"
+
+    validate(validation_df.at[0, "Sex"], value, hint)
