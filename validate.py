@@ -139,6 +139,16 @@ def validate_age_box_plot(age_box_plot):
     validate(validation_df["Age"].plot.box(), age_box_plot, hint)
 
 def validate_append(appended_df):
+    nrows, ncols = 10, 3
+    rng = np.random.RandomState(42)
+    df1, df2 = (pd.DataFrame(rng.rand(nrows, ncols))
+                        for i in range(2))
+
     hint = "Look at Pandas' append function. Also make sure you're appending `df2` to `df1` AND ignoring indexes. If its still confusing, take a look at https://pandas.pydata.org/pandas-docs/stable/user_guide/merging.html#appending-rows-to-a-dataframe"
 
     validate(df1.append(df2, ignore_index=True), appended_df, hint)
+
+def validate_csv_output(csv_return_value):
+    hint = "Look at Pandas' `to_csv` function."
+
+    validate(validation_df.to_csv(), csv_return_value, hint)
