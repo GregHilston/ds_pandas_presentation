@@ -67,3 +67,11 @@ def validate_pivot_table_pclass_sex_survived(df):
                     values='Survived', aggfunc='sum')
 
     validate(pivot_table, df, hint)
+
+def validate_pivot_table_pclass_sex_fare(df):
+    hint = "Hint: Look into the Pandas function `pivot_table`"
+
+    pivot_table = validation_df.pivot_table(index='Pclass', columns='Sex', 
+                    values='Fare', aggfunc='mean')
+
+    validate(pivot_table, df, hint)
