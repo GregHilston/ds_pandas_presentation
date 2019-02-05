@@ -59,3 +59,11 @@ def validate_max_age(value):
     hint = "Hint: Look into the Pandas function `max` that can be called on a Series"
 
     validate(validation_df["Age"].max(), value, hint)
+
+def validate_pivot_table_pclass_sex_survived(df):
+    hint = "Hint: Look into the Pandas function `pivot_table`"
+
+    pivot_table = validation_df.pivot_table(index='Pclass', columns='Sex', 
+                    values='Survived', aggfunc='sum')
+
+    validate(pivot_table, df, hint)
