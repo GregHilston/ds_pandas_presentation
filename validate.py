@@ -49,3 +49,8 @@ def validate_value_of_sex_column_first_row(value):
     hint = "Hint: Look up the Pandas function `at`"
 
     validate(validation_df.at[0, "Sex"], value, hint)
+
+def validate_min_age(value):
+    hint = "Hint: Look into the Pandas function `min` that can be called on a Series"
+
+    validate(validation_df["Age"].min(), value, hint)
