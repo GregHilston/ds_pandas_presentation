@@ -75,3 +75,9 @@ def validate_pivot_table_pclass_sex_fare(df):
                     values='Fare', aggfunc='mean')
 
     validate(pivot_table, df, hint)
+
+def validate_transpose(df):
+
+    hint = "Look into the Pandas function `T`"
+
+    validate(validation_df.T, df, hint)
