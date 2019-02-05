@@ -122,3 +122,8 @@ def validate_new_wealthy_column(new_df_with_wealthy_column):
     copy_validation_df["Wealthy"] = copy_validation_df.apply(new_wealthy_column, axis=1)
 
     validate(copy_validation_df, new_df_with_wealthy_column, hint)
+
+def validate_age_histogram(age_histogram):
+    hint = "Look into Pandas' `hist` method"
+
+    validate(validation_df["Age"].hist(), age_histogram, hint)
