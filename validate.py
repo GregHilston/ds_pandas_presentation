@@ -127,3 +127,8 @@ def validate_age_histogram(age_histogram):
     hint = "Look into Pandas' `hist` method"
 
     validate(validation_df["Age"].hist(), age_histogram, hint)
+
+def validate_age_bar_plot(age_bar_plot):
+    hint = "Look into Pandas' `hist` method"
+
+    validate(validation_df["Age"].hist(), age_histogram, hint)
