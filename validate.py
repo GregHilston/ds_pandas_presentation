@@ -54,3 +54,8 @@ def validate_min_age(value):
     hint = "Hint: Look into the Pandas function `min` that can be called on a Series"
 
     validate(validation_df["Age"].min(), value, hint)
+
+def validate_max_age(value):
+    hint = "Hint: Look into the Pandas function `max` that can be called on a Series"
+
+    validate(validation_df["Age"].max(), value, hint)
