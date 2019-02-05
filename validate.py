@@ -152,3 +152,8 @@ def validate_csv_output(csv_return_value):
     hint = "Look at Pandas' `to_csv` function."
 
     validate(validation_df.to_csv(), csv_return_value, hint)
+
+def validate_json_output(json_return_value):
+    hint = "Look at Pandas' `to_json` function."
+
+    validate(validation_df.to_json(), json_return_value, hint)
