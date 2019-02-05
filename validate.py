@@ -103,3 +103,19 @@ def validate_only_age_and_sex_columns(age_and_sex_columns_df):
 
 def validate_males_over_50_in_pclass_3(males_over_50_pclass_3):
     hint = "Look into indexing the original data frame and combing conditionals with the `&` operator. This may be challenging the first time you do this. Here's an example of getting the teenages`df[(df['Age'] <= 18) & (df['Age'] >= 13)]`. Modify this to your need!"
+
+    validate(validation_df[(validation_df['Age'] > 50) & (validation_df['Sex'] == 'male') & (validation_df['Pclass'] == 3)], males_over_50_pclass_3, hint)
+
+def new_wealthy_column(x):
+    if x.Pclass == 1:
+        return True
+    else:
+        return False
+
+def validate_new_wealhty_column(df):
+    hint = "Look into the `apply` function. This is an incredibly useful took to use with Pandas. I reccommend really ensuring you understand this challenge, as it will save you much time in the future."
+
+    copy_validation_df = validation_df.copy()
+    copy_validation_df["Wealthy"] = df.apply(new_wealthy_column, axis=1)
+
+    validate(copy_validation_df, df, hint)
