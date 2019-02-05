@@ -137,3 +137,8 @@ def validate_age_box_plot(age_box_plot):
     hint = "Look into Pandas' `plot.box` method"
 
     validate(validation_df["Age"].plot.box(), age_box_plot, hint)
+
+def validate_append(appended_df):
+    hint = "Look at Pandas' append function. Also make sure you're appending `df2` to `df1` AND ignoring indexes. If its still confusing, take a look at https://pandas.pydata.org/pandas-docs/stable/user_guide/merging.html#appending-rows-to-a-dataframe"
+
+    validate(df1.append(df2, ignore_index=True), appended_df, hint)
