@@ -112,10 +112,10 @@ def new_wealthy_column(x):
     else:
         return False
 
-def validate_new_wealhty_column(df):
+def validate_new_wealthy_column(new_df_with_wealthy_column):
     hint = "Look into the `apply` function. This is an incredibly useful took to use with Pandas. I reccommend really ensuring you understand this challenge, as it will save you much time in the future."
 
     copy_validation_df = validation_df.copy()
-    copy_validation_df["Wealthy"] = df.apply(new_wealthy_column, axis=1)
+    copy_validation_df["Wealthy"] = copy_validation_df.apply(new_wealthy_column, axis=1)
 
-    validate(copy_validation_df, df, hint)
+    validate(copy_validation_df, new_df_with_wealthy_column, hint)
