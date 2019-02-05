@@ -85,3 +85,8 @@ def validate_age_removed(df_without_age):
     hint = "Look into the Pandas function `remove`. Note, this doesn't modify the dataframe by default and instead returns a new modified data frame. Also take note of the axis parameter (hint you want it to be set to 1, for columns)"
 
     validate(validation_df.drop("Age", axis=1), df_without_age, hint)
+
+def validate_age_column_renamed_to_how_old(df_age_renamed_df):
+    hint = "Look into the Pandas function called `rename`"
+
+    validate(validation_df.rename(columns={'Age': 'How Old'}), df_age_renamed_df, hint)
