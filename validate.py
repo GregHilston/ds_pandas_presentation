@@ -9,11 +9,12 @@ INPUT_FILE = "train.csv"
 validation_df = pd.read_csv(INPUT_FILE)
 
 def validate(expected, actual, message, success_message=None):
-    # print(f"expected type {type(expected)}") # TODO remove
-    # print(f"actual type {type(actual)}") # TODO remove
-
-    if ((isinstance(expected, pd.DataFrame) or isinstance(expected, pd.Series)) and not expected.equals(actual)) or ((isinstance(expected, float) or isinstance(expected, int) or isinstance(expected, str)) and expected != actual):
-        print("Incorrect!")
+    if type(expected) != type(actual):
+        print("Incorrect type!")
+        print(f"expected type {type(expected)}")
+        print(f"actual type {type(actual)}")
+    elif ((isinstance(expected, pd.DataFrame) or isinstance(expected, pd.Series)) and not expected.equals(actual)) or ((isinstance(expected, float) or isinstance(expected, int) or isinstance(expected, str)) and expected != actual):
+        print("Incorrect data!")
         print("Expected:")
         display(expected)
         print("Actual:")
