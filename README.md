@@ -41,3 +41,9 @@ This Jupyter Notebook was written using Python 3. I've saved all the dependencie
 6. At this point, you should be able to run the notebook. 
 
   `$ jupyter lab`
+
+## Improvements?
+
+If there's something I can improve, please either reach out to me, or feel free to submit a pull request.
+
+Additionally, if you have completed the notebook in the allotted time, feel free to come up with your own challenges and let me know about them or submit a pull request to [here]() and I'll gladly add them!
