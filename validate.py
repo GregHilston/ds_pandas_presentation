@@ -157,3 +157,8 @@ def validate_json_output(json_return_value):
     hint = "Look at Pandas' `to_json` function."
 
     validate(validation_df.to_json(), json_return_value, hint)
+
+def validate_html_output(html_return_value):
+    hint = "Look at Pandas' `to_html` function"
+
+    validate(validation_df.to_html(), html_return_value, hint)
