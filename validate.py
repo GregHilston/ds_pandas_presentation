@@ -2,14 +2,15 @@
 # Below is the code needed to perform validation on the work above.
 
 import pandas as pd
+import numpy as np
 
 INPUT_FILE = "train.csv"
 
 validation_df = pd.read_csv(INPUT_FILE)
 
 def validate(expected, actual, message, success_message=None):
-    print(f"expected type {type(expected)}") # TODO remove
-    print(f"actual type {type(actual)}") # TODO remove
+    # print(f"expected type {type(expected)}") # TODO remove
+    # print(f"actual type {type(actual)}") # TODO remove
 
     if ((isinstance(expected, pd.DataFrame) or isinstance(expected, pd.Series)) and not expected.equals(actual)) or ((isinstance(expected, float) or isinstance(expected, int) or isinstance(expected, str)) and expected != actual):
         print("Incorrect!")
