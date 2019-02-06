@@ -17,15 +17,27 @@ I've broken up the notebook into four sections
 This Jupyter Notebook was written using Python 3. I've saved all the dependencies in a `requirements.txt` file. I use the follow steps to get Jupyter up and running. If you have better or simpler instructions, please let me know.
 
 1. Clone this repository to your local computer. You can do this with any GUI tool of your choice, or use the following command in terminal:
-  $ git clone https://github.com/GregHilston/ds_pandas_presentation.git
+
+  `$ git clone https://github.com/GregHilston/ds_pandas_presentation.git`
+
 2. Create a virtual environment. This is to ensure that the dependencies that I've defined for this project never interact or cause issues with other projects you might have:
-  $ venv venv
-3. Activate the virtual environment. This is to ensure all dependencies you install, are being installed to your newly created virtual environment and not your global space. 
-  $ source venv/bin/activate
+
+  `$ venv venv`
+
+3. Activate the virtual environment. This is to ensure all dependencies you install, are being installed to your newly created virtual environment and not your global space.
+
+ `$ source venv/bin/activate`
+
 4. Install the dependencies. You won't be able to run the notebook or any of the code without the code that this project depends on.
-  $ pip3 install -r requirements.txt
+
+ `$ pip3 install -r requirements.txt`
+
 5. _This step might be optional. To be honest, my entire laptop's Python setup it botched. I'd try skipping this step at first and coming back to it if you can't get the notebook to run._
+  
   Create a new kernel:
-  $ python3 -m ipykernel install --user --name ds_pandas_presentation
+
+  `$ python3 -m ipykernel install --user --name ds_pandas_presentation`
+
 6. At this point, you should be able to run the notebook. 
-  $ jupyter lab
+
+  `$ jupyter lab`
